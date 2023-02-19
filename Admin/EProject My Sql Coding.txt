@@ -1,0 +1,37 @@
+Create Database Saim;
+Use Saim;
+
+Create Table Movies(m_id int primary key auto_increment, m_name varchar(50), m_trailer VARCHAR (50), m_type varchar(50),
+m_writer VARCHAR (50), m_director VARCHAR (50), m_release_date Date, m_language VARCHAR (50), m_image Text,  m_blobing Mediumblob);
+ Select * From Movies m Join Types t ON m.m_type = t.mt_id; 
+Select * From Movies;
+
+Create Table Types(mt_id int primary key auto_increment, mt_name varchar(50), mt_descriptions VARCHAR (100));
+Select * From Types;
+
+Create Table Tickets(t_id int Primary Key auto_increment, t_class VARCHAR (50), no_of_tickets int);
+Select * From Tickets;
+
+Create Table User(u_id int Primary Key auto_increment, u_name VARCHAR (50), u_email VARCHAR (50),
+ u_uname VARCHAR (50), u_password int (8));
+Select * From User;
+
+Create Table Admin(ad_id int Primary Key auto_increment, ad_name VARCHAR (50),
+ ad_about VARCHAR (100), ad_company VARCHAR (100), ad_job VARCHAR (50),
+ ad_country VARCHAR (50), ad_address VARCHAR (50), ad_phone_no int, ad_email VARCHAR (50), ad_uname VARCHAR (50), ad_pwd int (8));
+Alter Table Admin Add Column ad_image text After ad_id; 
+Select * From Admin;
+
+Create Table TMovies(tm_id int primary key auto_increment, tm_name varchar(50), tm_trailer VARCHAR (50), tm_type varchar(50),
+ tm_image Text,  tm_blobing Mediumblob);
+ Select * From TMovies m Join Types t ON m.tm_type = t.mt_id;
+ Select * From TMovies;
+
+Create Table Ads(ads_id int Primary Key auto_increment, ads_trailer VARCHAR (50), ads_image Text, ads_descriptions VARCHAR (50), ads_date DATE, ads_image_blobing Mediumblob);
+Select * From Ads;
+
+ Create Table Comments(uc_id int primary key auto_increment, uc_name VARCHAR (50), uc_email VARCHAR (50), uc_phone_number VARCHAR (50), uc_user_massage VARCHAR (100));
+ Select * From Comments;
+
+ Create Table Theater(th_id int primary key auto_increment, th_name VARCHAR (50), th_location Int);
+ Select * From Theater;
